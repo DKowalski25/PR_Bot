@@ -40,7 +40,7 @@ async def main() -> None:
     session_maker = get_session_maker(async_engin)
     await proceed_schemas(async_engin, BaseModel.metadata)
 
-    await dp.start_polling(bot)
+    await dp.start_polling(bot, session_maker=session_maker)
 
 
 if __name__ == '__main__':
